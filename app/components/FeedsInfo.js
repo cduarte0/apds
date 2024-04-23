@@ -20,7 +20,7 @@ export default function FeedsInfo({ feed, i }) {
           </a>
         </p>
       </div>
-      <div className="sm:flex md:flex rounded-full lg:mr-80 w-3/4">
+      <div className="sm:flex md:flex lg:mr-64 w-3/4">
         <Image
           className="max-w-full max-h-full"
           src={"/images/chiure2.jpeg"}

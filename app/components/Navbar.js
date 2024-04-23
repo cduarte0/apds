@@ -3,14 +3,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faInfo, faSignIn, faTasks, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faInfo,
+  faSignIn,
+  faTasks,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
 export default function () {
-
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick =() => {
+  const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
@@ -22,15 +27,15 @@ export default function () {
             <Image
               className="flex-shrink-0"
               src="/images/logo.png"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               alt="Logo"
             />
             <div className="hidden md:block">
               <ul className="ml-10 flex items-baseline space-x-6">
                 {items.map((item, i) => {
                   return (
-                    <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
+                    <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
                       <Link href={item.href}>{item.name}</Link>
                     </li>
                   );
@@ -38,7 +43,7 @@ export default function () {
               </ul>
             </div>
             <div className="hidden md:block bg-green-800 text-white font-medium py-2 px-4 rounded-md">
-            <a href="#">Entrar</a>
+              <a href="#">Entrar</a>
             </div>
           </div>
           <div className="mt-12 mr-2 flex md:hidden">
@@ -69,20 +74,18 @@ export default function () {
       </div>
       {isOpen && (
         <div className="mt-8">
-        <ul className="px-2 pt-2 sm:px-3">
-          {itemsMobile.map((item, i) => {
-            return (
-              
-              <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
-                <FontAwesomeIcon icon={item.icon} className="w-5" />
-                <Link href={item.href}>{item.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+          <ul className="px-2 pt-2 sm:px-3">
+            {itemsMobile.map((item, i) => {
+              return (
+                <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
+                  <FontAwesomeIcon icon={item.icon} className="w-5" />
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       )}
-      
     </nav>
   );
 }
@@ -100,18 +103,10 @@ const items = [
     icon: "",
     href: "activitys",
   },
-  { id: 3,
-    name: "Projectos",
-    icon: "",
-    href: "projets",
-  },
-  { id: 4,
-    name: "Parceiros",
-    icon: "",
-    href: "partners",
-  },
+  { id: 3, name: "Projectos", icon: "", href: "projets" },
+  { id: 4, name: "Parceiros", icon: "", href: "partners" },
   {
-    id:5,
+    id: 5,
     name: "Sobre",
     icon: "",
     href: "#about",
@@ -131,18 +126,10 @@ const itemsMobile = [
     icon: faTasks,
     href: "#",
   },
-  { id: 3,
-    name: "Projectos",
-    icon: faFolderOpen,
-    href: "projets",
-  },
-  { id: 4,
-    name: "Parceiros",
-    icon: faUsers,
-    href: "#",
-  },
+  { id: 3, name: "Projectos", icon: faFolderOpen, href: "projets" },
+  { id: 4, name: "Parceiros", icon: faUsers, href: "#" },
   {
-    id:5,
+    id: 5,
     name: "Sobre",
     icon: faInfo,
     href: "#",
@@ -152,5 +139,5 @@ const itemsMobile = [
     name: "Entrar",
     icon: faSignIn,
     href: "",
-  }
+  },
 ];

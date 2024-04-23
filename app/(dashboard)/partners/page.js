@@ -2,7 +2,7 @@
 import React from "react";
 import { fetchAll, create } from "./../../services/partners";
 import { useEffect, useState } from "react";
-import TableRow from "@/app/components/TableRow";
+import PartnerTableRows from "@/app/components/partnerTableRows";
 import PageHeader from "@/app/components/PageHeader";
 export default function page() {
   const [partners, setPartners] = useState([]);
@@ -53,7 +53,7 @@ export default function page() {
                 </thead>
                 <tbody>
                   {partners.map((partner, i) => {
-                    return <TableRow partner={partner} i={i + 1} />;
+                    return <PartnerTableRows partner={partner} i={i + 1} />;
                   })}
                 </tbody>
               </table>

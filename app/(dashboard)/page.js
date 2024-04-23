@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import { fetchAll } from "../services/feeds";
 import FeedsInfo from "../components/FeedsInfo";
+import CardPartner from "../components/CardPartner";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [feeds, setFeeds] = useState([]);
@@ -19,43 +21,68 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="justify-between space-y-32 mt-14 max-w-max">
-      <section className="flex flex-auto">
+    <div className="justify-between space-y-32">
+      <section id="feed" className="flex flex-auto mt-14">
         {feeds.map((feed, i) => {
           return <FeedsInfo feed={feed} i={i} />;
         })}
-       
       </section>
-      <section className="flex flex-auto space-x-20">
-        <div className="font-bold py-32 text-3xl ml-96 float float-left font-serif items-center">
+      <section id="activity" className="sm:items-center md:items-center max-w-screen-lg mx-80 flex flex-shrink-0">
+        <div className="font-bold py-32 text-3xl font-serif items-center">
           <p>
             Actividades na
             <span className="text-green-700"> APDS</span>
           </p>
         </div>
-        <div className="w-3/4 h-3/4">
-          <Card />
+        <div className="w-4/5 flex-shrink-0">
+          <Card
+            urlImage="/images/chiure5.jpeg"
+            title="Data"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+          />
         </div>
       </section>
-      {/* <section className="flex flex-auto space-x-20">
-        <div className=" ml-80 w-3/4 h-3/4">
-          <Card />
+      <section id="project" className="flex flex-none space-x-2">
+        <div className="w-3/4 h-3/4 ml-96">
+          <Card
+            urlImage="/images/chiure2.jpeg"
+            title="Actividades de chiure"
+            description="Nossas actividades sao feitas dessa forma"
+          />
         </div>
-        <div className="font-bold py-32 text-3xl font-serif items-center">
+        <div className="font-bold py-32 text-3xl font-serif fle">
           <p>
-            Projectos na 
+            Projectos na
             <span className="text-green-700"> APDS</span>
           </p>
         </div>
-      </section> */}
-      {/* <section className="container mx-auto ml-80 w-3/4 h-3/4 space-y-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <CardPartner/>
-          <CardPartner/>
-          <CardPartner/>
-          <CardPartner/>
+      </section>
+      <section id="partner" className="mx-80 space-y-4">
+        <p className="font-bold">Parceiros de Cooperação</p>
+
+        <div className="grid grid-cols-4 gap-4">
+          <CardPartner
+            urlImage="/images/mentor.png"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          />
+          <CardPartner
+            urlImage="/images/unicef.png"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          />
+          <CardPartner
+            urlImage="/images/unicef.png"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          />
+          <CardPartner
+            urlImage="/images/unicef.png"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          />
         </div>
-      </section> */}
+      </section>
+
+      <section id="donor">
+        <div></div>
+      </section>
     </div>
   );
 }
