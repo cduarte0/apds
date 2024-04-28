@@ -11,9 +11,11 @@ export default function RootLayout({ children }) {
     <html lang="pt">
       <body>
         <div>
-          <Navbar/>
+          <Navbar />
           <main>{children}</main>
-          <Footer/>
+          <div className="flex flex-col mb-0 -mt-px">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

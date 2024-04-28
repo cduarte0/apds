@@ -16,7 +16,7 @@ export default function TableRow({ project, i }) {
       <td className="whitespace-nowrap  px-6 py-4">{project.type_currency}</td>
       <td className="whitespace-nowrap  px-6 py-4">
       <FontAwesomeIcon icon={faEye} className="w-5 text-gray-700"/>
-      <FontAwesomeIcon icon={faEdit} className="w-5 text-green-500"/>
+      <FontAwesomeIcon onClick={"project/create/_id"} icon={faEdit} className="w-5 text-green-500"/>
       <FontAwesomeIcon icon={faTrash} className="w-5 text-red-500"/>
       </td>
     </tr>

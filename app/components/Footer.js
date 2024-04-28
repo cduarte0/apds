@@ -102,7 +102,7 @@ export default function Footer() {
 
       <div className="">
         <p className="font-sans text-white p-8 text-start md:text-center md:text-lg md:p-4">
-          &copy; 2024 APDS Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} APDS Inc. All rights reserved.
         </p>
       </div>
     </footer>

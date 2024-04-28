@@ -8,8 +8,7 @@ import PageHeader from "@/app/components/PageHeader";
 
 export default function page() {
   const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading, isModalOpen, setIsModalOpen] =
-    useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchProjectsData = async () => {

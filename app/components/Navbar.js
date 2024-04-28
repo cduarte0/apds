@@ -43,7 +43,7 @@ export default function () {
               </ul>
             </div>
             <div className="hidden md:block bg-green-800 text-white font-medium py-2 px-4 rounded-md">
-              <a href="#">Entrar</a>
+              <Link href={"/auth"} >Entrar</Link>
             </div>
           </div>
           <div className="mt-12 mr-2 flex md:hidden">

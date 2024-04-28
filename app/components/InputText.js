@@ -6,6 +6,7 @@ export default function InputText({
   placeholder,
   value,
   onChange,
+  name,
 }) {
   return (
     <div className="mb-4">

@@ -15,7 +15,7 @@ export const fetchAll = async () => {
 };
 export const create = async (project) => {
   try {
-    const response = await axios.post(`http://localhost:8080/api/projects`, project);
+    const response = await axios.post(`http://localhost:8080/api/addProject`, project);
     return response;
   } catch (error) {
     console.error("Error creating project:", error);
