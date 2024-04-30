@@ -2,22 +2,18 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export default function TableRow({ project, i }) {
+export default function TableUserRow({ user, i }) {
   return (
     <tr className="border-b dark:border-neutral-500">
       <td className="whitespace-nowrap px-6 py-4">{i}</td>
-      <td className="whitespace-nowrap px-6 py-4">{project.project_name}</td>
+      <td className="whitespace-nowrap px-6 py-4">{user.email}</td>
       <td className="whitespace-nowrap px-6 py-4">
-        {project.local_implementation}
+        {user.role}
       </td>
-      <td className="whitespace-nowrap  px-6 py-4">
-        {project.balance_available}
-      </td>
-      <td className="whitespace-nowrap  px-6 py-4">{project.type_currency}</td>
       <td className="whitespace-nowrap  px-6 py-4">
         <FontAwesomeIcon icon={faEye} className="w-5 text-gray-700" />
         <FontAwesomeIcon
-          onClick={"project/create/_id"}
+          onClick={"users/create/_id"}
           icon={faEdit}
           className="w-5 text-green-500"
         />

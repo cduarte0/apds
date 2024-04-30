@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Card({ title, description, urlImage, className }) {
   const date = new Date();
   return (
-    <div className="bg-white flex-shrink-0 shadow-md rounded-lg overflow-hidden p-3 w-1/2 h-full">
+    <div className="bg-white flex-shrink-0 shadow-md rounded-lg overflow-hidden p-3 w-4/5 h-full">
       <Image
         className=" p-4 rounded-md w-full object-cover object-center"
         src={urlImage}

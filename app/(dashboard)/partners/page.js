@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { fetchAll, create } from "./../../services/partners";
 import { useEffect, useState } from "react";
 import PartnerTableRows from "@/app/components/partnerTableRows";
@@ -18,9 +19,20 @@ export default function page() {
   }, []);
   return (
     <>
-      <PageHeader title="Lista de Parceiros" buttonMessage="Adicionar Parceiro">
-        A lista de todos os parceiros da Associação
-      </PageHeader>
+      <div className="flex justify-between gap-2 mt-24">
+        <PageHeader title="Lista de Parceiros">
+          A lista de parceiros da Associação
+        </PageHeader>
+        <div className="flex justify-center">
+          {/* <p className="flex">Pesquisar</p> */}
+          <Link
+            className="bg-green-800 text-white justify-center mx-6 py-1 px-2"
+            href="partners/create"
+          >
+            Adicionar parceiro
+          </Link>
+        </div>
+      </div>
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">

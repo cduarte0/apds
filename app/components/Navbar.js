@@ -8,6 +8,7 @@ import {
   faInfo,
   faSignIn,
   faTasks,
+  faUser,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
@@ -43,7 +44,7 @@ export default function () {
               </ul>
             </div>
             <div className="hidden md:block bg-green-800 text-white font-medium py-2 px-4 rounded-md">
-              <Link href={"/auth"} >Entrar</Link>
+              <Link href={"/auth"}>Entrar</Link>
             </div>
           </div>
           <div className="mt-12 mr-2 flex md:hidden">
@@ -103,10 +104,17 @@ const items = [
     icon: "",
     href: "activitys",
   },
-  { id: 3, name: "Projectos", icon: "", href: "projets" },
-  { id: 4, name: "Parceiros", icon: "", href: "partners" },
   {
-    id: 5,
+    id: 3,
+    name: "Doacoes",
+    icon: "",
+    href: "donnats",
+  },
+  { id: 4, name: "Utilizadores", icon: "", href: "users" },
+  { id: 5, name: "Projectos", icon: "", href: "projets" },
+  { id: 6, name: "Parceiros", icon: "", href: "partners" },
+  {
+    id: 7,
     name: "Sobre",
     icon: "",
     href: "#about",
@@ -126,16 +134,23 @@ const itemsMobile = [
     icon: faTasks,
     href: "#",
   },
-  { id: 3, name: "Projectos", icon: faFolderOpen, href: "projets" },
-  { id: 4, name: "Parceiros", icon: faUsers, href: "#" },
   {
-    id: 5,
+    id: 3,
+    name: "Doacoes",
+    icon: "",
+    href: "donnats",
+  },
+  { ide: 4, name: "Utilizadores", icon: faUsers, href: "users" },
+  { id: 5, name: "Projectos", icon: faFolderOpen, href: "projets" },
+  { id: 6, name: "Parceiros", icon: faUser, href: "#" },
+  {
+    id: 7,
     name: "Sobre",
     icon: faInfo,
     href: "#",
   },
   {
-    id: 6,
+    id: 8,
     name: "Entrar",
     icon: faSignIn,
     href: "",

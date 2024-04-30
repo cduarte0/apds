@@ -4,7 +4,7 @@ import API_BASE_URL from "./index";
 axios.defaults.headers.get['Content-Type'] ='application/json;charset=utf-8';
 axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
-export const fetchAll = async () => {
+export const fetchAllProjects = async () => {
   try {
     const response = await axios.get(`http://localhost:8080/api/getProjects`);
     return response.data;

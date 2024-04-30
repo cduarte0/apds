@@ -15,7 +15,7 @@ export const fetchAll = async () => {
 };
 export const create = async (partner) => {
   try {
-    const response = await axios.post(`http://localhost:8080/api/partners`, partner);
+    const response = await axios.post(`http://localhost:8080/api/addPartner`, partner);
     return response;
   } catch (error) {
     console.error("Error creating partner:", error);
