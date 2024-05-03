@@ -106,7 +106,7 @@ const items = [
   },
   {
     id: 3,
-    name: "Doacoes",
+    name: "Doações",
     icon: "",
     href: "donnats",
   },
@@ -136,7 +136,7 @@ const itemsMobile = [
   },
   {
     id: 3,
-    name: "Doacoes",
+    name: "Doações",
     icon: "",
     href: "donnats",
   },

@@ -6,20 +6,28 @@ import { useEffect, useState } from "react";
 import TableRow from "@/app/components/TableRow";
 import PageHeader from "@/app/components/PageHeader";
 import Footer from "@/app/components/Footer";
+import Loading from "@/app/components/Loading";
 
 export default function page() {
   const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProjectsData = async () => {
-      const projectsData = await fetchAllProjects();
-      setProjects(projectsData);
-      setIsLoading(false);
-    };
+    setTimeout(() => {
+      const fetchProjectsData = async () => {
+        const projectsData = await fetchAllProjects();
+        setProjects(projectsData);
+        setIsLoading(false);
+      };
 
-    fetchProjectsData();
+      fetchProjectsData();
+    }, 2000);
   }, []);
+
+  if(isLoading){
+    return <Loading/>
+  }
+
   return (
     <div className="space-y-12">
       <div className="flex justify-between gap-2 mt-24">
@@ -71,9 +79,6 @@ export default function page() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col mb-0 -mt-px">
-        <Footer />
       </div>
     </div>
   );

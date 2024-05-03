@@ -1,28 +1,32 @@
-"use client"
+"use client";
+import Loading from "@/app/components/Loading";
 import PageHeader from "@/app/components/PageHeader";
 import TableUserRow from "@/app/components/TableUserRows";
 import { fetchAll } from "@/app/services/users";
 import Link from "next/link";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 export default function page() {
   const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const usersData = await fetchAll();
-      setUsers(usersData);
-      setIsLoading(false);
-      console.log(usersData)
-    };
+    setTimeout(() => {
+      const fetchUsers = async () => {
+        const usersData = await fetchAll();
+        setUsers(usersData);
+        setIsLoading(false);
+      };
 
-    fetchUsers();
+      fetchUsers();
+    }, 2000);
   }, []);
-  console.log(users)
+  if(isLoading){
+    return<Loading/>
+  }
   return (
-    <>
-      <div className="flex justify-between space-y-6 gap-2 mt-24">
+    <div className="space-y-10">
+      <div className="flex justify-between gap-2 mt-24">
         <PageHeader title="Lista de Utilizadores">
           Todos os Utilizadores registados
         </PageHeader>
@@ -56,13 +60,13 @@ export default function page() {
               </tr>
             </thead>
             <tbody className="font-normal">
-             {users.map((user, i)=>{
-              return <TableUserRow user={user} i={i+1}/>
-             })}
+              {users.map((user, i) => {
+                return <TableUserRow user={user} i={i + 1} />;
+              })}
             </tbody>
           </table>
         </div>
       </div>
-    </>
+    </div>
   );
 }

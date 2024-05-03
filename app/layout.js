@@ -10,9 +10,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt">
       <body>
-        <div>
+        <div className="space-y-20">
           <Navbar />
           <main>{children}</main>
+          <div className="mb-0">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

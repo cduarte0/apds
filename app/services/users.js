@@ -12,7 +12,7 @@ export const fetchAll = async () => {
 };
 export const create = async (user) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/users`, user);
+    const response = await axios.post(`http://localhost:8080/api/addUser`, user);
     return response;
   } catch (error) {
     console.error("Error creating user:", error);
