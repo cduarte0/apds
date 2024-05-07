@@ -5,7 +5,7 @@ import { fetchAll, create } from "./../../services/partners";
 import { useEffect, useState } from "react";
 import PartnerTableRows from "@/app/components/partnerTableRows";
 import PageHeader from "@/app/components/PageHeader";
-export default function page() {
+export default function Page() {
   const [partners, setPartners] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {

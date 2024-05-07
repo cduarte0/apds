@@ -6,7 +6,7 @@ import { fetchAll } from "@/app/services/users";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-export default function page() {
+export default function Page() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

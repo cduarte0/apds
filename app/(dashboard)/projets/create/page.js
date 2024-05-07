@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export default function page() {
   const date = new Date();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [project, setProject, clearProject] = useState({
+  const [project, setProject] = useState({
     project_name: "",
     budget: "",
     balance_available: "",
@@ -59,7 +59,6 @@ export default function page() {
         closeModal();
       } else {
         alert("Ocorreu algum erro na insercao do projecto");
-        clearProject();
       }
     });
   };

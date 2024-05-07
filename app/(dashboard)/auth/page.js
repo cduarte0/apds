@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const [username, setUsername] = useState('');

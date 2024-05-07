@@ -7,7 +7,7 @@ import TableRow from "@/app/components/TableRow";
 import PageHeader from "@/app/components/PageHeader";
 import Loading from "@/app/components/Loading";
 
-export default function page() {
+export default function Page() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

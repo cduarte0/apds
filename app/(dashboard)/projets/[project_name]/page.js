@@ -6,12 +6,12 @@ import { update, fetchProjectsByName } from "@/app/services/projects";
 import { useParams, useRouter } from "next/navigation";
 import Loading from "@/app/components/Loading";
 
-export default function page() {
+export default function Page() {
   let dateStart = new Date();
   let dateEnd = new Date();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [project, setProject, clearProject] = useState({
+  const [project, setProject] = useState({
     project_name: "",
     budget: "",
     balance_available: "",
@@ -22,7 +22,6 @@ export default function page() {
     account_number_project: "",
     type_currency: "",
   });
-  const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
 

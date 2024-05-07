@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@/app/components/Button";
 import { create } from "@/app/services/users";
 
-export default function page() {
+export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState({
     email: "",
