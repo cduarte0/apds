@@ -13,6 +13,15 @@ export const fetchAllProjects = async () => {
     throw error;
   }
 };
+export const fetchProjectsByName = async (name) => {
+  try {
+    const response = await axios.get(`http://localhost:8080/api/getUniqueProjectByName/`+ name);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    throw error;
+  }
+};
 export const create = async (project) => {
   try {
     const response = await axios.post(`http://localhost:8080/api/addProject`, project);
@@ -22,9 +31,9 @@ export const create = async (project) => {
     throw error;
   }
 };
-export const update = async (id) => {
+export const update = async (project) => {
   try {
-    const response = await axios.put(`${API_BASE_URL}/projects`, project);
+    const response = await axios.put(`http://localhost:8080/api/updateProject/`+project.id, project);
     return response;
   } catch (error) {
     console.error("Error updating project:", error);

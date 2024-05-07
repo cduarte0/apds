@@ -5,7 +5,6 @@ import { fetchAllProjects, create } from "./../../services/projects";
 import { useEffect, useState } from "react";
 import TableRow from "@/app/components/TableRow";
 import PageHeader from "@/app/components/PageHeader";
-import Footer from "@/app/components/Footer";
 import Loading from "@/app/components/Loading";
 
 export default function page() {

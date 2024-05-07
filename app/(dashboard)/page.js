@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card";
+import Carousel from "../components/Carousel";
 import { fetchAll } from "../services/feeds";
 import { fetchAllProjects } from "../services/projects";
 import FeedsInfo from "../components/FeedsInfo";
@@ -12,6 +12,21 @@ export default function Home() {
   const [feeds, setFeeds] = useState([]);
   const [projects, setProjectsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const items = [
+    {
+      image: "/images/chiure2.jpeg",
+      description: "First slide description",
+    },
+    {
+      image: "/images/chiure3.jpeg",
+      description: "Second slide description",
+    },
+    {
+      image: "/images/chiure5.jpeg",
+      description: "Third slide description",
+    },
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,52 +53,42 @@ export default function Home() {
   }
 
   return (
-    <div className="justify-between space-y-32">
-      <section id="feed" className="flex flex-auto mt-14">
+    <div className="justify-around lg:space-y-28 xl:space-y-28 2xl:space-y-28">
+      <section id="feed" className="mt-14">
         {feeds.map((feed, i) => {
           return <FeedsInfo feed={feed} i={i} />;
         })}
       </section>
       <section
         id="activity"
-        className="max-w-screen-lg mx-80 flex flex-shrink-0"
+        className="flex-row justify-between lg:space-x-6 mx-4 items-center lg:mx-80 xl:mx-80 2xl:mx-80 lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
       >
-        <div className="font-bold py-32 text-3xl font-serif items-center">
-          <p>
-            Actividades na
-            <span className="text-green-700"> APDS</span>
+        <div className="flex flex-row font-bold py-20 text-3xl font-serif">
+          <p className="flex flex-row items-center">
+            Actividades
           </p>
         </div>
-        <div className="w-3/4">
-          <Card
-            urlImage="/images/chiure5.jpeg"
-            title="30/04/2024"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-          />
+        <div className="container mx-auto my-8">
+          <Carousel items={items} />
         </div>
       </section>
       <section
         id="project"
-        className="max-w-screen-lg mx-80 flex flex-shrink-0"
+        className="mx-4 items-center justify-between lg:space-x-6 lg:mx-80 xl:mx-80 2xl:mx-80 flex-row lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
       >
-        <div className="font-bold py-32 text-3xl font-serif items-center">
+        <div className="font-bold py-20 text-3xl font-serif">
           <p>
-            Projectos na
-            <span className="text-green-700"> APDS</span>
+            Projectos
           </p>
         </div>
-        <div className="w-3/4">
-          <Card
-            urlImage="/images/chiure2.jpeg"
-            title="30/04/2024"
-            description="Nossas actividades sao feitas dessa forma"
-          />
+        <div className="container mx-auto my-8">
+          <Carousel items={items}/>
         </div>
       </section>
-      <section id="partner" className="mx-80 space-y-4">
+      <section id="partner" className="mx-4 lg:mx-80 space-y-4">
         <p className="font-bold">Parceiros de Cooperação</p>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="sm:flex md:flex sm:flex-row md:flex-row lg:grid lg:grid-cols-4 lg:gap-4 xl:grid xl:grid-cols-4 xl:gap-4 2xl:grid 2xl:grid-cols-4 2xl:gap-4">
           <CardPartner
             urlImage="/images/mentor.png"
             description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"

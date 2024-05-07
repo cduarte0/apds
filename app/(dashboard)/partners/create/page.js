@@ -8,7 +8,8 @@ import { useRouter } from "next/navigation";
 export default function page() {
   const date = new Date();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [partner, setPartner, clearPartner] = useState({
+  const [image, setImage] = useState(null);
+  const [partner, setPartner] = useState({
     partner_name: "",
     email: "",
     nuit: "",
@@ -16,6 +17,10 @@ export default function page() {
     logotipo: "",
     project_id: "",
   });
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
 
   const router = useRouter();
   const openModal = () => {
@@ -37,6 +42,8 @@ export default function page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    partner.logotipo = image;
+    console.log(partner);
     await create(partner).then((res) => {
       if (res.status == 200) {
         alert("Parceiro cadastrado com sucesso");
@@ -51,7 +58,6 @@ export default function page() {
         closeModal();
       } else {
         alert("Ocorreu algum erro na insercao do parceiro");
-        clearPartner();
       }
     });
   };
@@ -147,7 +153,7 @@ export default function page() {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="logotipo"
+                htmlFor="image"
               >
                 Logotipo
               </label>
@@ -155,10 +161,10 @@ export default function page() {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="file"
                 id="logotipo"
-                name="logotipo"
+                name="image"
                 placeholder="carregar logotipo"
-                value={partner.logotipo}
-                onChange={handleChange}
+                accept="image/*"
+                onChange={handleImageChange}
               />
             </div>
           </div>
