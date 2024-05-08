@@ -16,10 +16,11 @@ export default function Home() {
   const items = [
     {
       image: "/images/chiure2.jpeg",
-      description: "First slide description",
+      description:
+        "Associação é uma entidade de direito privado, dotada de personalidade jurídica e com algumas caracterizada pelo agrupamento de pessoas para a realização e consecução de",
     },
     {
-      image: "/images/chiure3.jpeg",
+      image: "/images/chiure4.jpeg",
       description: "Second slide description",
     },
     {
@@ -56,33 +57,29 @@ export default function Home() {
     <div className="justify-around lg:space-y-28 xl:space-y-28 2xl:space-y-28">
       <section id="feed" className="mt-14">
         {feeds.map((feed, i) => {
-          return <FeedsInfo feed={feed} i={i} />;
+          return <FeedsInfo key={i} feed={feed} i={i} />;
         })}
       </section>
       <section
         id="activity"
-        className="flex-row justify-between lg:space-x-6 mx-4 items-center lg:mx-80 xl:mx-80 2xl:mx-80 lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
+        className="flex-row  mx-4 items-center justify-center lg:mx-80 xl:mx-80 2xl:mx-80 lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
       >
         <div className="flex flex-row font-bold py-20 text-3xl font-serif">
-          <p className="flex flex-row items-center">
-            Actividades
-          </p>
+          <p className="flex flex-row items-center">Nossas Actividades</p>
         </div>
-        <div className="container mx-auto my-8">
+        <div className="container mx-auto my-8 max-w-md p-4">
           <Carousel items={items} />
         </div>
       </section>
       <section
         id="project"
-        className="mx-4 items-center justify-between lg:space-x-6 lg:mx-80 xl:mx-80 2xl:mx-80 flex-row lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
+        className="mx-4 items-center justify-center lg:mx-80 xl:mx-80 2xl:mx-80 flex-row lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
       >
         <div className="font-bold py-20 text-3xl font-serif">
-          <p>
-            Projectos
-          </p>
+          <p>Nossos Projectos</p>
         </div>
-        <div className="container mx-auto my-8">
-          <Carousel items={items}/>
+        <div className="container mx-auto my-8 max-w-md p-4">
+          <Carousel items={items} />
         </div>
       </section>
       <section id="partner" className="mx-4 lg:mx-80 space-y-4">

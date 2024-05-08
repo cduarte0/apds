@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function FeedsInfo({ feed, i }) {
+export default function FeedsInfo({ feed }) {
   return (
     <div className="flex-row lg:flex xl:flex 2xl:flex">
       <div className="ml-4 sm:mr-4 md:mr-4 lg:ml-80 xl:ml-80 2xl:ml-80 items-center justify-center font-serif">
@@ -22,11 +22,12 @@ export default function FeedsInfo({ feed, i }) {
       </div>
       <div className="ml-4 mr-4 lg:mr-64 2xl:mr:64 lg:inline-block w-full">
         <Image
-          className="max-w-full max-h-full"
+          className="w-auto h-auto"
           src={"/images/chiure2.jpeg"}
           width={320}
           height={320}
           alt="activity"
+          property=""
         />
         <p className="flex flex-auto items-center justify-center lg:hidden xl:hidden 2xl:hidden">
           <a

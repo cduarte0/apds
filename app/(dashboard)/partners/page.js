@@ -65,7 +65,7 @@ export default function Page() {
                 </thead>
                 <tbody>
                   {partners.map((partner, i) => {
-                    return <PartnerTableRows partner={partner} i={i + 1} />;
+                    return <PartnerTableRows key={i} partner={partner} i={i + 1} />;
                   })}
                 </tbody>
               </table>

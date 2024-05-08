@@ -31,6 +31,8 @@ export default function () {
               width={100}
               height={100}
               alt="Logo"
+              property=""
+              priority=""
             />
             <div className="hidden md:block">
               <ul className="ml-10 flex items-baseline space-x-6">
@@ -117,7 +119,7 @@ const items = [
     id: 7,
     name: "Sobre",
     icon: "",
-    href: "#about",
+    href: "about",
   },
 ];
 
