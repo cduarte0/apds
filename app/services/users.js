@@ -30,7 +30,7 @@ export const update = async (id) => {
 };
 export const remove = async (id) => {
   try {
-    const response = await axios.delete(`${API_BASE_URL}/users`, user);
+    const response = await axios.delete(`http://localhost:8080/api/deleteUser/`+id);
     return response;
   } catch (error) {
     console.error("Error deleting user:", error);

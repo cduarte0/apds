@@ -21,29 +21,40 @@ export default function Page() {
       fetchUsers();
     }, 2000);
   }, []);
-  if(isLoading){
-    return<Loading/>
+  if (isLoading) {
+    return <Loading />;
   }
   return (
-    <div className="space-y-10">
-      <div className="flex justify-between gap-2 mt-24">
-        <PageHeader title="Lista de Utilizadores">
-          Todos os Utilizadores registados
-        </PageHeader>
-        <div className="flex justify-center">
-          <Link
-            className="bg-green-800 text-white justify-center mx-6 py-1 px-2"
-            href="users/create"
-          >
-            Adicionar Utilizador
-          </Link>
-        </div>
+    <div className="overflow-x-auto">
+      <div className="block lg:hidden">
+        {/* List view for small screens */}
+        {users.map((user) => (
+          <div key={user.id} className="border-b py-4">
+            <h2 className="text-lg font-semibold">{user.email}</h2>
+            <p>Tipo: {user.role}</p>
+            {/* <p>Phone: {user.phone}</p> */}
+          </div>
+        ))}
       </div>
-      <div className="flex flex-col">
-        <div className="overflow-x-auto sm:mx-6 lg:mx-2"></div>
-        <div className="overflow-hidden">
-          <table className="min-w-full text-center text-sm font-light mx-14">
-            <thead className="border-b bg-green-800 font-medium font-serif text-white dark:border-neutral-500 dark:bg-neutral-900">
+      <div className="hidden lg:flex lg:flex-col space-y-4 mt-8">
+        <div className="flex gap-2 w-5/6">
+          <div className="float-end ml-20">
+            <PageHeader title="Lista de Projectos">
+              A lista de projecto da Associação
+            </PageHeader>
+          </div>
+          <div className="">
+            <Link
+              className="flex text-white bg-green-700 justify-center mx-6 py-2 px-4"
+              href="users/create"
+            >
+              Adicionar Projecto
+            </Link>
+          </div>
+        </div>
+        <div className="lg:items-center lg:justify-center lg:flex lg:flex-col">
+          <table className="lg:table text-center table-auto w-5/6 lg:items-center lg:justify-center">
+            <thead className="items-center justify-center border-b bg-green-800 font-medium font-serif text-white dark:border-neutral-500 dark:bg-green-800">
               <tr>
                 <th scope="col" className=" px-6 py-4">
                   #
@@ -51,7 +62,7 @@ export default function Page() {
                 <th scope="col" className=" px-6 py-4">
                   E-mail
                 </th>
-                <th scope="col" className=" px-6 py-4">
+                <th scope="col" className="px-6 py-4">
                   Tipo de Utilizador
                 </th>
                 <th scope="col" className=" px-6 py-4">

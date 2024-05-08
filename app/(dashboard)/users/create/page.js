@@ -1,17 +1,22 @@
 "use client";
 import Modal from "@/app/components/Modal";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "@/app/components/Button";
 import { create } from "@/app/services/users";
+import Notification from "@/app/components/Notification";
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [user, setUser] = useState({
     email: "",
-    hashed_password: "",
+    password: "",
     role: "",
   });
+  const [passwordError, setPasswordError] = useState("");
+  const options = ["ROOT", "USER", "ADMIN"];
 
   const router = useRouter();
   const openModal = () => {
@@ -29,23 +34,34 @@ export default function Page() {
       ...prevState,
       [name]: value,
     }));
+    if (name === "password") {
+      if (value.length < 7) {
+        setPasswordError("A password deve conter 8 ou mais carracteres.");
+      } else {
+        setPasswordError("");
+      }
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await create(user).then((res) => {
-      if (res.status == 200) {
-        alert("Utilizador inserido com sucesso");
-        setUser({
-          email: "",
-          hashed_password: "",
-          role: "",
-        });
-        closeModal();
-      } else {
-        alert("Ocorreu algum erro na insercao do Utilizador");
-      }
-    });
+    if (!passwordError) {
+      await create(user).then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          setSuccessMessage('Data submitted successfully!');
+          setUser({
+            email: "",
+            password: "",
+            role: "",
+          });
+          closeModal();
+        } else {
+          alert("Ocorreu algum erro na insercao do Utilizador");
+        }
+      });
+    } else {
+      alert("Please correct the form errors before submitting.");
+    }
   };
 
   return (
@@ -70,6 +86,7 @@ export default function Page() {
                 id="email"
                 placeholder="fulano@gmail.com"
                 name="email"
+                required
                 value={user.email}
                 onChange={handleChange}
               />
@@ -77,19 +94,23 @@ export default function Page() {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="hashed_password"
+                htmlFor="password"
               >
                 Senha
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="password"
-                id="hashed_password"
+                id="password"
                 placeholder="Senha"
-                name="hashed_password"
-                value={user.hashed_password}
+                name="password"
+                required
+                value={user.password}
                 onChange={handleChange}
               />
+              {passwordError && (
+                <p className="text-red-500 text-sm">{passwordError}</p>
+              )}
             </div>
             <div className="mb-4">
               <label
@@ -98,15 +119,22 @@ export default function Page() {
               >
                 Tipo de Utilizador
               </label>
-              <input
+              <select
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 id="role"
-                placeholder="ADMIN"
                 name="role"
+                required=""
                 value={user.role}
                 onChange={handleChange}
-              />
+              >
+                <option value="">Selecione...</option>
+                {options.map((option, index) => (
+                  <option key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="flex flex-auto container justify-between mx-auto px-4 py-8 space-x-2">
@@ -119,6 +147,8 @@ export default function Page() {
             <Button className="bg-green-700">Submeter</Button>
           </div>
         </form>
+        {successMessage && <Notification type="success" text={successMessage} />}
+        {errorMessage && <Notification type="error" text={errorMessage} />}
       </Modal>
     </div>
   );
