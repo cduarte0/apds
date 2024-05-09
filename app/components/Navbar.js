@@ -39,7 +39,9 @@ export default function NavBar() {
                 {items.map((item) => {
                   return (
                     <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
-                      <Link key={item.id} href={item.href}>{item.name}</Link>
+                      <Link key={item.id} href={item.href}>
+                        {item.name}
+                      </Link>
                     </li>
                   );
                 })}
@@ -78,11 +80,17 @@ export default function NavBar() {
       {isOpen && (
         <div className="mt-8">
           <ul className="px-2 pt-2 sm:px-3">
-            {itemsMobile.map((item) => {
+            {itemsMobile.map((item, i) => {
               return (
                 <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
-                  <FontAwesomeIcon key={item.id} icon={item.icon} className="w-5" />
-                  <Link key={item.id} href={item.href}>{item.name}</Link>
+                  <FontAwesomeIcon
+                    key={i}
+                    icon={item.icon}
+                    className="w-5"
+                  />
+                  <Link key={i} href={item.href}>
+                    {item.name}
+                  </Link>
                 </li>
               );
             })}
@@ -125,34 +133,29 @@ const items = [
 
 const itemsMobile = [
   {
-    id: 1,
     name: "Inicio",
     icon: faHome,
     href: "#",
   },
   {
-    id: 2,
     name: "Actividades",
     icon: faTasks,
     href: "#",
   },
   {
-    id: 3,
     name: "Doações",
     icon: "",
     href: "donnats",
   },
-  { ide: 4, name: "Utilizadores", icon: faUsers, href: "users" },
-  { id: 5, name: "Projectos", icon: faFolderOpen, href: "projets" },
-  { id: 6, name: "Parceiros", icon: faUser, href: "#" },
+  { name: "Utilizadores", icon: faUsers, href: "users" },
+  { name: "Projectos", icon: faFolderOpen, href: "projets" },
+  { name: "Parceiros", icon: faUser, href: "#" },
   {
-    id: 7,
     name: "Sobre",
     icon: faInfo,
     href: "about",
   },
   {
-    id: 8,
     name: "Entrar",
     icon: faSignIn,
     href: "",
