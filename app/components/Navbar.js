@@ -82,7 +82,7 @@ export default function NavBar() {
               return (
                 <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
                   <FontAwesomeIcon key={item.id} icon={item.icon} className="w-5" />
-                  <Link href={item.href}>{item.name}</Link>
+                  <Link key={item.id} href={item.href}>{item.name}</Link>
                 </li>
               );
             })}
@@ -149,7 +149,7 @@ const itemsMobile = [
     id: 7,
     name: "Sobre",
     icon: faInfo,
-    href: "#",
+    href: "about",
   },
   {
     id: 8,
