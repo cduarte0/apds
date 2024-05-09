@@ -7,6 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import Loading from "@/app/components/Loading";
 
 export default function Page() {
+  const router = useRouter();
   let dateStart = new Date();
   let dateEnd = new Date();
 
@@ -39,8 +40,6 @@ export default function Page() {
   if (isLoading) {
     return <Loading />;
   }
-
-  const router = useRouter();
   const openModal = () => {
     setIsModalOpen(true);
   };

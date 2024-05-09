@@ -36,10 +36,10 @@ export default function NavBar() {
             />
             <div className="hidden md:block">
               <ul className="ml-10 flex items-baseline space-x-6">
-                {items.map((item, i) => {
+                {items.map((item) => {
                   return (
                     <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
-                      <Link key={i} href={item.href}>{item.name}</Link>
+                      <Link key={item.id} href={item.href}>{item.name}</Link>
                     </li>
                   );
                 })}
@@ -78,10 +78,10 @@ export default function NavBar() {
       {isOpen && (
         <div className="mt-8">
           <ul className="px-2 pt-2 sm:px-3">
-            {itemsMobile.map((item, i) => {
+            {itemsMobile.map((item) => {
               return (
                 <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
-                  <FontAwesomeIcon key={i} icon={item.icon} className="w-5" />
+                  <FontAwesomeIcon key={item.id} icon={item.icon} className="w-5" />
                   <Link href={item.href}>{item.name}</Link>
                 </li>
               );
