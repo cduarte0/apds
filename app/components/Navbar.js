@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
-export default function () {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -39,7 +39,7 @@ export default function () {
                 {items.map((item, i) => {
                   return (
                     <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
-                      <Link href={item.href}>{item.name}</Link>
+                      <Link key={i} href={item.href}>{item.name}</Link>
                     </li>
                   );
                 })}
@@ -81,7 +81,7 @@ export default function () {
             {itemsMobile.map((item, i) => {
               return (
                 <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
-                  <FontAwesomeIcon icon={item.icon} className="w-5" />
+                  <FontAwesomeIcon key={i} icon={item.icon} className="w-5" />
                   <Link href={item.href}>{item.name}</Link>
                 </li>
               );

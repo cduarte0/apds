@@ -47,7 +47,6 @@ export default function Page() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    console.log(project);
     router.push("/projets");
   };
 

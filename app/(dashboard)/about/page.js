@@ -12,6 +12,7 @@ export default function Page() {
             src="/images/ab.jpg"
             width={520}
             height={420}
+            alt="Sobre nos"
             className="w-auto h-auto"
           />
         </div>
