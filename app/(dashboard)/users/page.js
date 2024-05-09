@@ -72,7 +72,7 @@ export default function Page() {
             </thead>
             <tbody className="font-normal">
               {users.map((user, i) => {
-                return <TableUserRow user={user} i={i + 1} />;
+                return <TableUserRow key={i} user={user} i={i + 1} />;
               })}
             </tbody>
           </table>

@@ -71,7 +71,7 @@ export default function Page() {
                 </thead>
                 <tbody className="font-normal">
                   {projects.map((project, i) => {
-                    return <TableRow project={project} i={i + 1} />;
+                    return <TableRow key={i} project={project} i={i + 1} />;
                   })}
                 </tbody>
               </table>

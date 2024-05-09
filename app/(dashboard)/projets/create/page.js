@@ -5,7 +5,7 @@ import Button from "@/app/components/Button";
 import { create } from "@/app/services/projects";
 import { useRouter } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   const date = new Date();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [project, setProject] = useState({
