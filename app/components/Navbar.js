@@ -38,8 +38,8 @@ export default function NavBar() {
               <ul className="ml-10 flex items-baseline space-x-6">
                 {items.map((item) => {
                   return (
-                    <li className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
-                      <Link key={item.id} href={item.href}>
+                    <li key={item.id} className="cursor-pointer p-2 font-medium hover:text-white hover:bg-green-800 hover:rounded-md active:rounded-md active:text-white active:bg-green-800">
+                      <Link href={item.href}>
                         {item.name}
                       </Link>
                     </li>
@@ -82,13 +82,13 @@ export default function NavBar() {
           <ul className="px-2 pt-2 sm:px-3">
             {itemsMobile.map((item, i) => {
               return (
-                <li className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
+                <li key={i} className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
                   <FontAwesomeIcon
-                    key={i}
+                    
                     icon={item.icon}
                     className="w-5"
                   />
-                  <Link key={i} href={item.href}>
+                  <Link href={item.href}>
                     {item.name}
                   </Link>
                 </li>
