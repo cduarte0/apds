@@ -3,7 +3,7 @@ import API_BASE_URL from "./index";
 
 export const fetchAll = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/getUsers`);
+    const response = await axios.get(`https://apds-backend.vercel.app/api/getUsers`);
     return response.data;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -12,7 +12,7 @@ export const fetchAll = async () => {
 };
 export const create = async (user) => {
   try {
-    const response = await axios.post(`http://localhost:8080/api/addUser`, user);
+    const response = await axios.post(`https://apds-backend.vercel.app/api/addUser`, user);
     return response;
   } catch (error) {
     console.error("Error creating user:", error);
@@ -30,7 +30,7 @@ export const update = async (id) => {
 };
 export const remove = async (id) => {
   try {
-    const response = await axios.delete(`http://localhost:8080/api/deleteUser/`+id);
+    const response = await axios.delete(`https://apds-backend.vercel.app/api/deleteUser/`+id);
     return response;
   } catch (error) {
     console.error("Error deleting user:", error);

@@ -6,7 +6,7 @@ axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
 export const fetchAll = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/getFeeds`);
+    const response = await axios.get(`https://apds-backend.vercel.app/api/getFeeds`);
     return response.data;
   } catch (error) {
     console.error("Error fetching feeds:", error);
@@ -15,7 +15,7 @@ export const fetchAll = async () => {
 };
 export const create = async (feed) => {
   try {
-    const response = await axios.post(`http://localhost:8080/api/feeds`, feed);
+    const response = await axios.post(`https://apds-backend.vercel.app/api/feeds`, feed);
     return response;
   } catch (error) {
     console.error("Error creating feed:", error);
