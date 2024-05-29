@@ -37,12 +37,12 @@ export default function Page() {
         </PageHeader>
           </div>
           <div className="">
-          <Link
+          {/* <Link
             className="bg-green-800 text-white justify-center mx-6 py-2 px-2"
             href="partners/create"
           >
             Adicionar parceiro
-          </Link>
+          </Link> */}
           </div>
         </div>
         <div className="lg:items-center lg:justify-center lg:flex lg:flex-col">

@@ -70,9 +70,9 @@ export default function Home() {
     fetchProjectsData();
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="justify-around lg:space-y-28 xl:space-y-28 2xl:space-y-28">
