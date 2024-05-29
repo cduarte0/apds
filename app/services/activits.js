@@ -6,7 +6,7 @@ axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
 export const fetchAll = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/getActivities`);
+    const response = await axios.get(`https://apds-backend.vercel.app/api/getActivities`);
     return response.data;
   } catch (error) {
     console.error("Error fetching donnats:", error);
@@ -15,7 +15,7 @@ export const fetchAll = async () => {
 };
 export const create = async (partner) => {
   try {
-    const response = await axios.post(`https://apds-backend.vercel.app/api/addPartner`, partner);
+    const response = await axios.post(`https://apds-backend.vercel.app/api/addActivity`, partner);
     return response;
   } catch (error) {
     console.error("Error creating partner:", error);
