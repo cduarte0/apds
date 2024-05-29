@@ -28,27 +28,39 @@ export default function Page() {
   }
 
   return (
-    <div className="space-y-12">
-      <div className="flex justify-between gap-2 mt-24">
-        <PageHeader title="Lista de Projectos">
-          A lista de projecto da Associação
-        </PageHeader>
-
-        {/* <p className="flex">Pesquisar</p> */}
-        <Link
-          className="bg-green-800 flex text-white justify-center mx-6 py-1 px-4"
-          href="projets/create"
-        >
-          Adicionar Projecto
-        </Link>
+    <div className="overflow-x-auto">
+       <div className="block lg:hidden bg-white p-2 justify-center items-center rounded-lg w-full mb-4 border border-slate-200">
+        <div className="flex-row items-center justify-center">
+        {projects.map((project) => (
+          <div key={project.id} className="border-b flex-1 w-[100%] p-2">
+            <h2 className="text-lg font-semibold">{project.project_name}</h2>
+            <p>Local de Implementação: {project.local_implementation}</p>
+            <p>Estado: {project.project_status}</p>
+          </div>
+        ))}
       </div>
-      <div className="flex flex-col">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-2">
-          <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div className="overflow-hidden items-center">
-              <table className="min-w-full text-center text-sm font-light mx-14">
-                <thead className="bg-green-800 border-b-2 font-medium font-serif text-white dark:border-neutral-500 dark:bg-neutral-900">
-                  <tr>
+        </div>
+       
+      <div className="hidden lg:flex lg:flex-col space-y-4 mt-8">
+        <div className="flex gap-2 w-5/6">
+          <div className="float-end ml-20">
+            <PageHeader title="Lista de Projectos">
+              A lista de Projectos da Associação
+            </PageHeader>
+          </div>
+          {/* <div className="">
+            <Link
+              className="flex text-white bg-green-700 justify-center mx-6 py-2 px-4"
+              href="users/create"
+            >
+              Adicionar Utilizador
+            </Link>
+          </div> */}
+        </div>
+        <div className="lg:items-center lg:justify-center lg:flex lg:flex-col">
+          <table className="lg:table text-center table-auto w-5/6 lg:items-center lg:justify-center">
+            <thead className="items-center justify-center border-b bg-green-800 font-medium font-serif text-white dark:border-neutral-500 dark:bg-green-800">
+            <tr>
                     <th scope="col" className=" px-6 py-4">
                       #
                     </th>
@@ -64,21 +76,20 @@ export default function Page() {
                     <th scope="col" className=" px-6 py-4">
                       Moeda
                     </th>
-                    <th scope="col" className=" px-6 py-4">
+                    {/* <th scope="col" className=" px-6 py-4">
                       Acção
-                    </th>
+                    </th> */}
                   </tr>
-                </thead>
-                <tbody className="font-normal">
+            </thead>
+            <tbody className="font-normal">
                   {projects.map((project, i) => {
                     return <TableRow key={i} project={project} i={i + 1} />;
                   })}
                 </tbody>
-              </table>
-            </div>
-          </div>
+          </table>
         </div>
       </div>
     </div>
   );
 }
+  

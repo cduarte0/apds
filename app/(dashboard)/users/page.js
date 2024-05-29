@@ -39,8 +39,8 @@ export default function Page() {
       <div className="hidden lg:flex lg:flex-col space-y-4 mt-8">
         <div className="flex gap-2 w-5/6">
           <div className="float-end ml-20">
-            <PageHeader title="Lista de Projectos">
-              A lista de projecto da Associação
+            <PageHeader title="Lista de Utilizadores">
+              A lista de Utilizadores da Associação
             </PageHeader>
           </div>
           <div className="">
@@ -48,7 +48,7 @@ export default function Page() {
               className="flex text-white bg-green-700 justify-center mx-6 py-2 px-4"
               href="users/create"
             >
-              Adicionar Projecto
+              Adicionar Utilizador
             </Link>
           </div>
         </div>

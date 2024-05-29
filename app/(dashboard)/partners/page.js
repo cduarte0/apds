@@ -18,28 +18,37 @@ export default function Page() {
     fetchPartnersData();
   }, []);
   return (
-    <>
-      <div className="flex justify-between gap-2 mt-24">
-        <PageHeader title="Lista de Parceiros">
+    <div className="overflow-x-auto">
+      <div className="block lg:hidden">
+        <h1 className='text-2xl font-bold'>A lista de parceiros da Associação</h1>
+        {partners.map((partner) => (
+          <div key={partner.id} className="border-b py-4">
+            <h2 className="text-lg font-semibold">Nome do doador: {partner?.partner_name}</h2>
+            <p>E-mail: {partner?.partner_email}</p>
+            <p>Endereço: {partner?.partner_address}</p>
+          </div>
+        ))}
+      </div>
+      <div className="hidden lg:flex lg:flex-col space-y-4 mt-8">
+        <div className="flex gap-2 w-5/6">
+          <div className="float-end ml-20">
+          <PageHeader title="Lista de Parceiros">
           A lista de parceiros da Associação
         </PageHeader>
-        <div className="flex justify-center">
-          {/* <p className="flex">Pesquisar</p> */}
+          </div>
+          <div className="">
           <Link
-            className="bg-green-800 text-white justify-center mx-6 py-1 px-2"
+            className="bg-green-800 text-white justify-center mx-6 py-2 px-2"
             href="partners/create"
           >
             Adicionar parceiro
           </Link>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div className="overflow-hidden">
-              <table className="min-w-full text-center text-sm font-light mx-14">
-                <thead className="border-b bg-green-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
-                  <tr>
+        <div className="lg:items-center lg:justify-center lg:flex lg:flex-col">
+          <table className="lg:table text-center table-auto w-5/6 lg:items-center lg:justify-center">
+            <thead className="items-center justify-center border-b bg-green-800 font-medium font-serif text-white dark:border-neutral-500 dark:bg-green-800">
+            <tr>
                     <th scope="col" className=" px-6 py-4">
                       #
                     </th>
@@ -49,30 +58,31 @@ export default function Page() {
                     <th scope="col" className=" px-6 py-4">
                       E-mail
                     </th>
-                    <th scope="col" className=" px-6 py-4">
+                    {/* <th scope="col" className=" px-6 py-4">
                       Projecto
-                    </th>
+                    </th> */}
                     <th scope="col" className=" px-6 py-4">
                       Endereco
                     </th>
                     <th scope="col" className=" px-6 py-4">
                       Nuit
                     </th>
-                    <th scope="col" className=" px-6 py-4">
+                    {/* <th scope="col" className=" px-6 py-4">
                       Acção
-                    </th>
+                    </th> */}
                   </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                   {partners.map((partner, i) => {
                     return <PartnerTableRows key={i} partner={partner} i={i + 1} />;
                   })}
                 </tbody>
-              </table>
-            </div>
-          </div>
+          </table>
         </div>
       </div>
-    </>
+    </div>
   );
+
 }
+
+

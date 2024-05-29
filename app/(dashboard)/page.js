@@ -15,19 +15,40 @@ export default function Home() {
 
   const items = [
     {
+      title:"",
       image: "/images/chiure2.jpeg",
       description:
-        "Associação é uma entidade de direito privado, dotada de personalidade jurídica e com algumas caracterizada pelo agrupamento de pessoas para a realização e consecução de",
+        "Desde a sua criação, a APDS implementou projetos de Nutrição, Agricultura, Água e Saneamento, e Voucher, em programas de Desenvolvimento e Emergência.",
     },
     {
+      title:"",
       image: "/images/chiure4.jpeg",
-      description: "Second slide description",
+      description: "Os principais parceiros nestas atividades foram o ADM (Agro-negócios para o Desenvolvimento de Moçambique) e FNDS (Fundo Nacional de Desenvolvimento Sustentável). Fundos destas atividades eram provenientes do Banco Mundial e Japão.",
     },
     {
+      title:"",
       image: "/images/chiure5.jpeg",
-      description: "Third slide description",
+      description: "Atualmente a APDS está implementando projeto de nutrição e promoção de higiene junto da Mentor Initiative, através dos fundos da UNICEF nos distritos de Chiure e Mueda.",
     },
   ];
+  const itemsActivity = [
+
+    {
+      title:"Distribuição de Kits",
+      image: "/images/at.png",
+      description:"No âmbito da implementação do projeto de Nutrição nos distritos de Mueda e Chiure, a APDS em parceria com a Mentor Initiative, com financiamento do UNICEF, realizou no distrito de Chiure, nas comunidades de Nivenevene, Mocone e Mepilane, a distribuição de Kits de higiene para a população. Também apoiou na administração da vitamina A e administração de desparasitantes"
+    },
+    {
+      title: "Desparasitação",
+      image: "/images/at3.png",
+      description:" No âmbito da implementação do projeto de nutrição no distrito de Mueda e Chiure, A APDS em parceria com a Mentor Initiative através do financiamento da UNICEF Mozambique, deu continuidade no mes de Maio com a realização de varias atividades que tem desenvolvido com destaque: A suplementação, a desparasitação, a pesagem, a medição do perímetro braquial, a avaliação dos edemas e a demonstração culinária."
+    },
+    {
+      title:"Balanço Trimestral",
+      image: "/images/at4.png",
+      description:" No âmbito da implementação do projeto de nutrição nos distritos de Mueda e Chiure, A APDS em parceria com a Mentor Initiative através do financiamento da UNICEF, Realizou no dia 14 de Março no distrito de Mueda o balanço trimestral"
+    },
+  ]
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,13 +83,13 @@ export default function Home() {
       </section>
       <section
         id="activity"
-        className="flex-row  mx-4 items-center justify-center lg:mx-80 xl:mx-80 2xl:mx-80 lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
+        className="flex-row mx-4 items-center justify-center lg:mx-80 xl:mx-80 2xl:mx-80 lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto"
       >
         <div className="flex flex-row font-bold py-20 text-3xl font-serif">
           <p className="flex flex-row items-center">Nossas Actividades</p>
         </div>
         <div className="container mx-auto my-8 max-w-md p-4">
-          <Carousel items={items} />
+          <Carousel items={itemsActivity} />
         </div>
       </section>
       <section
@@ -85,22 +106,22 @@ export default function Home() {
       <section id="partner" className="mx-4 lg:mx-80 space-y-4">
         <p className="font-bold">Parceiros de Cooperação</p>
 
-        <div className="sm:flex md:flex sm:flex-row md:flex-row lg:grid lg:grid-cols-4 lg:gap-4 xl:grid xl:grid-cols-4 xl:gap-4 2xl:grid 2xl:grid-cols-4 2xl:gap-4">
+        <div className="sm:flex text-justify md:flex sm:flex-row md:flex-row lg:grid lg:grid-cols-4 lg:gap-4 xl:grid xl:grid-cols-4 xl:gap-4 2xl:grid 2xl:grid-cols-4 2xl:gap-4">
           <CardPartner
             urlImage="/images/mentor.png"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            description="Está implementando junto da APDS programa de Nutrição e Promoção de Higiene nos distritos de Mueda e Chiure"
           />
           <CardPartner
             urlImage="/images/unicef.png"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            description="Parceiro de implementação. Doador do fundo do programa de nutrição e promoção de higiene nos distritos de Chiure e Mueda"
           />
           <CardPartner
-            urlImage="/images/unicef.png"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            urlImage="/images/oikos.png"
+            description="Um dos nossos parceiros de cooperação que nos ajuda também a concretizar os nossos valores"
           />
           <CardPartner
-            urlImage="/images/unicef.png"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            urlImage="/images/government.png"
+            description="O governo, como a estrutura chave do país no combate a pobreza e o desemprego"
           />
         </div>
       </section>

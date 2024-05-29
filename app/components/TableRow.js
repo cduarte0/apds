@@ -15,14 +15,14 @@ export default function TableRow({ project, i }) {
         {project.balance_available}
       </td>
       <td className="whitespace-nowrap  px-6 py-4">{project.type_currency}</td>
-      <td className="whitespace-nowrap  px-6 py-4">
+      {/* <td className="whitespace-nowrap  px-6 py-4">
         <FontAwesomeIcon icon={faEye} className="w-5 text-gray-700" />
         <Link href={"/projets/"+project.project_name}>
           <FontAwesomeIcon icon={faEdit} className="w-5 text-green-500" />
         </Link>
 
         <FontAwesomeIcon icon={faTrash} className="w-5 text-red-500" />
-      </td>
+      </td> */}
     </tr>
   );
 }

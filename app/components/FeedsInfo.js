@@ -5,12 +5,12 @@ export default function FeedsInfo({ feed }) {
   return (
     <div className="flex-row lg:flex xl:flex 2xl:flex">
       <div className="ml-4 sm:mr-4 md:mr-4 lg:ml-80 xl:ml-80 2xl:ml-80 items-center justify-center font-serif">
-        <p className="text-green-700 flex flex-auto">{feed.feed_name}</p>
+        <p className="text-green-700 flex flex-auto">{feed?.feed_description}</p>
         <p className="text-3xl">
-          <span className="font-bold flex flex-auto">{feed.general_information} </span>
-          <span className="text-green-700 flex flex-auto">{feed.kind}</span>
+          <span className="font-bold flex flex-auto">{feed?.general_information} </span>
+          <span className="text-green-700 flex flex-auto">{feed?.kind}</span>
         </p>
-        <p>{feed.sector}</p>
+        <p>{feed?.sector}</p>
         <p className="hidden lg:flex lg:flex-auto xl:flex xl:flex-auto 2xl:flex 2xl:flex-auto">
           <a
             href="#"

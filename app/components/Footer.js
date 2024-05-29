@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-500 font-sans text-white dark:bg-green-500">
+    <footer className="bg-green-900 font-sans text-white dark:bg-green-900 bottom-0 p-4 inset-0">
       <div className="container mx-auto py-4 px-4 flex flex-col lg:flex-col items-center justify-between">
         <div className="flex flex-col space-y-4 items-center mx-auto">
           <p className="font-semibold text-white dark:text-white">
@@ -12,7 +12,7 @@ export default function Footer() {
           </p>
           <div className="flex">
             <a
-              href="https://www.facebook.com"
+              href="https://web.facebook.com/APDS.CD.MOZ"
               className="ml-4 text-gray-400 hover:text-white transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function Footer() {
               />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/apdscdmoz/"
               className="ml-4 text-gray-400 hover:text-white transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </a>
             <a
-              href="#"
+              href="https://x.com/ApdsCD"
               className="ml-4 text-gray-200 bg-blue-700 p-1 rounded-md hover:text-white transition duration-300"
               target="_blank"
               rel="noopener noreferrer"

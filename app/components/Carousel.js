@@ -22,14 +22,14 @@ export default function Carousel({ items }) {
       <Slider {...settings}>
         {items.map((item,index)=>(
           <div key={index} className="h-auto">
-            <CarouselItem image={item.image} description={item.description}/>
+            <CarouselItem image={item.image} date={item.title} description={item.description}/>
 
           </div>
         ))}
       </Slider>
-      <div className="text-white p-2 rounded-md items-end bg-green-800 hover:text-white float-end">
+      {/* <div className="text-white p-2 rounded-md items-end bg-green-800 hover:text-white float-end">
         <a href="#">ver mais</a>
-      </div>
+      </div> */}
       
       
     </div>

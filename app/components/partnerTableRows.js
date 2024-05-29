@@ -8,17 +8,17 @@ export default function TableRow({ partner, i }) {
       <td className="whitespace-nowrap  px-6 py-4">{i}</td>
       <td className="whitespace-nowrap  px-6 py-4">{partner.partner_name}</td>
       <td className="whitespace-nowrap  px-6 py-4">
-        {partner.partner_email}
+        {partner.email}
       </td>
       <td className="whitespace-nowrap  px-6 py-4">
-        {partner.partner_address}
+        {partner.address}
       </td>
       <td className="whitespace-nowrap  px-6 py-4">{partner.nuit}</td>
-      <td className="whitespace-nowrap  px-6 py-4">
+      {/* <td className="whitespace-nowrap  px-6 py-4">
       <FontAwesomeIcon icon={faEye} className="w-5 text-gray-700"/>
       <FontAwesomeIcon icon={faEdit} className="w-5 text-green-500"/>
       <FontAwesomeIcon icon={faTrash} className="w-5 text-red-500"/>
-      </td>
+      </td> */}
     </tr>
   );
 }
