@@ -11,7 +11,7 @@ export default function DonnatsTable(Donnat, i) {
           <td className="whitespace-nowrap px-6 py-4">
             {Donnat?.email}
           </td>
-          <td className="whitespace-nowrap  px-6 py-4">
+          {/* <td className="whitespace-nowrap  px-6 py-4">
             <FontAwesomeIcon icon={faEye} className="w-5 text-gray-700" />
             <FontAwesomeIcon
               onClick={"users/create/id"}
@@ -19,7 +19,7 @@ export default function DonnatsTable(Donnat, i) {
               className="w-5 text-green-500"
             />
             <Link href={"/users/"+user.id}><FontAwesomeIcon icon={faTrash} className="w-5 text-red-500" /></Link>
-          </td>
+          </td> */}
         </tr>
       );
 }
