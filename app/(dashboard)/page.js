@@ -31,6 +31,13 @@ export default function Home() {
       description: "Atualmente a APDS está implementando projeto de nutrição e promoção de higiene junto da Mentor Initiative, através dos fundos da UNICEF nos distritos de Chiure e Mueda.",
     },
   ];
+  const feedInfo = [{
+    id: 1,
+    feed_description:"Desenvolvimento & Sustentabilidade",
+    general_information: "Faça a diferença em Cabo Delgado: Junte-se a nós para promover a ",
+    kind: "Sustentabilidade",
+    sector: "No sector agrário e saúde"
+  }];
   const itemsActivity = [
 
     {
@@ -50,34 +57,35 @@ export default function Home() {
     },
   ]
 
-  useEffect(() => {
-    setTimeout(() => {
-      const fetchFeedsData = async () => {
-        const feedsData = await fetchAll();
-        setFeeds(feedsData);
-        setIsLoading(false);
-      };
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const fetchFeedsData = async () => {
+  //       const feedsData = await fetchAll();
+  //       setFeeds(feedsData);
+  //       setIsLoading(false);
+  //     };
 
-      fetchFeedsData();
-    }, 2000);
-  }, []);
-  useEffect(() => {
-    const fetchProjectsData = async () => {
-      const projectsData = await fetchAllProjects();
-      setProjectsData(projectsData);
-    };
+  //     fetchFeedsData();
+  //   }, 2000);
+  // }, []);
+  // useEffect(() => {
+  //   const fetchProjectsData = async () => {
+  //     const projectsData = await fetchAllProjects();
+  //     setProjectsData(projectsData);
+  //   };
 
-    fetchProjectsData();
-  }, []);
+  //   fetchProjectsData();
+  // }, []);
 
   // if (isLoading) {
   //   return <Loading />;
   // }
 
   return (
-    <div className="justify-around lg:space-y-28 xl:space-y-28 2xl:space-y-28">
-      <section id="feed" className="mt-14">
-        {feeds.map((feed, i) => {
+    <div className="justify-around md:space-y-2">
+      <section id="feed" className="mt-32">
+        
+        {feedInfo.map((feed, i) => {
           return <FeedsInfo key={i} feed={feed} i={i} />;
         })}
       </section>

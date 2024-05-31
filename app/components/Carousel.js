@@ -18,10 +18,10 @@ export default function Carousel({ items }) {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full p-2">
       <Slider {...settings}>
         {items.map((item,index)=>(
-          <div key={index} className="h-auto">
+          <div key={index} className="h-auto p-2">
             <CarouselItem image={item.image} date={item.title} description={item.description}/>
 
           </div>

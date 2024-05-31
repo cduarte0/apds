@@ -31,10 +31,10 @@ export default function NavBar() {
   // };
 
   return (
-    <nav className="md:bg-gradient-radial from-green-900 white md:h-auto p-9 md:text-white md:w-auto">
+    <nav className="md:bg-gradient-radial md:fixed from-green-900 white md:h-auto p-9 md:text-white md:w-full md:top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="mt-12 flex items-center space-x-36">
+          <div className="mt-10 flex items-center space-x-36">
             <Image
               className="flex-shrink-0"
               src="/images/logo.png"
@@ -88,23 +88,19 @@ export default function NavBar() {
         </div>
       </div>
       {isOpen && (
-        <div className="mt-8">
-          <ul className="px-2 pt-2 sm:px-3 fixed bg-gradient-radial from-green-900 to-white">
+        <div className="mt-0">
+          <ul className="w-full px-auto pt-auto mx-0 sm:px-3 fixed bg-gradient-radial from-green-900 to-white">
             {itemsMobile.map((item, i) => {
               return (
-                <li key={i} className="cursor-pointer space-x-4 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
-                  <div>
+                <li key={i} className="cursor-pointer space-x-6 p-2 font-medium hover:text-white hover:bg-green-800 active:text-white active:bg-green-800">
+                  
                   <FontAwesomeIcon
-                    
                     icon={item.icon}
                     className="w-5"
                   />
-                  
                   <Link href={item.href}>
                     {item.name}
                   </Link>
-                  </div>
-                  
                 </li>
               );
             })}
@@ -149,7 +145,7 @@ const itemsMobile = [
   {
     name: "Inicio",
     icon: faHome,
-    href: "#",
+    href: "./",
   },
   {
     name: "Actividades",
