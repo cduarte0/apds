@@ -139,7 +139,7 @@ export default function Page() {
             </div>
             <div className="mt-12 md:mt-0">
             <Image
-              src="/images/about.jpg"
+              src="/images/about.JPG"
               width={520}
               height={420}
               alt="Sobre nos"
